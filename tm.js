@@ -5,6 +5,9 @@ let items = lists[0];
 items = items.querySelectorAll("div.item");
 
 items.forEach((item) => {
+  
+  //搜搜词
+  kw = document.getElementByid("q").geAttribute("value")
   // 图片链接
   picLink = item.querySelector(".pic .img").getAttribute("data-src");
   // 详情页链接
@@ -37,6 +40,7 @@ items.forEach((item) => {
 
   //将数据添加到data中
   data.push({
+    kw:kw,
     goodsID: goodsID,
     price: price,
     cnt: cnt,
@@ -59,6 +63,7 @@ function setStyle(dom, styles = {}) {
 
 // 设置表头
 let header = {
+  kw:"搜索词",
   goodsID: "商品id",
   price: "商品价格",
   cnt: "收货人数",
